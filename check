@@ -1,0 +1,18 @@
+         #/bin/bash!
+         
+
+
+prueba(){
+	dpkg -s net-tools &> /dev/null  			#revisa si se encuentra istalado
+
+    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+
+        then
+            echo "not installed"  
+            sudo apt-get update					#te hara una actualizacion 
+            sudo apt-get install net-tools		#te instalara el paquete
+
+        else
+            echo    "installed"
+    fi
+}
