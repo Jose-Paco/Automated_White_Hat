@@ -1,10 +1,6 @@
 #/bin/bash
 
-volver
 
-controlerror(){
-    trap '' INT TSTP # trap para recoger (atrapar) señales de control c y control z e invalidarlas
-}
 
 volvermenu(){
     read -p "Introduzca Q o q para salir y m o M para volver al menu: " letra  #se guaradara lo que pongas en letra 
