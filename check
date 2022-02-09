@@ -3,6 +3,7 @@
 
 
 prueba(){
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
 	dpkg -s openvpn &> /dev/null  			#revisa si se encuentra istalado
 
  	   if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
@@ -27,16 +28,29 @@ prueba(){
 	        else
 	            echo    "UNZIP Installed"
 	    fi
-	        	dpkg -s unzip &> /dev/null  			#revisa si se encuentra istalado
+	        	dpkg -s docker-ce &> /dev/null  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
 	        then
-	            echo "UNZIP not installed, installing..."  
+	            echo "Docker not installed, installing..."  
 	            sudo apt-get update					#te hara una actualizacion 
-	            sudo apt-get install unzip		#te instalara el paquete
+	            sudo apt-get install docker-ce		#te instalara el paquete
 	
 	        else
-	            echo    "UNZIP Installed"
+	            echo    "Docker Installed"
 	    fi
+	    	        	dpkg -s docker-ce-cli &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "Docker utilities not installed, installing..."  
+	            sudo apt-get update					#te hara una actualizacion 
+	            sudo apt-get install docker-ce		#te instalara el paquete
+	
+	        else
+	            echo    "Docker utilities Installed"
+	    fi
+
 }
