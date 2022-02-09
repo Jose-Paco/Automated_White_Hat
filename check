@@ -3,16 +3,40 @@
 
 
 prueba(){
-	dpkg -s net-tools &> /dev/null  			#revisa si se encuentra istalado
+	dpkg -s openvpn &> /dev/null  			#revisa si se encuentra istalado
 
-    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+ 	   if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 
-        then
-            echo "not installed"  
-            sudo apt-get update					#te hara una actualizacion 
-            sudo apt-get install net-tools		#te instalara el paquete
+  	      then
+        	    echo "VPN not installed, installing..."  
+        	    sudo apt-get update					#te hara una actualizacion 
+        	    sudo apt-get install openvpn		#te instalara el paquete
+	
+	        else
+	            echo    "VPN Installed"
+	    fi
+    	dpkg -s unzip &> /dev/null  			#revisa si se encuentra istalado
 
-        else
-            echo    "installed"
-    fi
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "UNZIP not installed, installing..."  
+	            sudo apt-get update					#te hara una actualizacion 
+	            sudo apt-get install unzip		#te instalara el paquete
+	
+	        else
+	            echo    "UNZIP Installed"
+	    fi
+	        	dpkg -s unzip &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "UNZIP not installed, installing..."  
+	            sudo apt-get update					#te hara una actualizacion 
+	            sudo apt-get install unzip		#te instalara el paquete
+	
+	        else
+	            echo    "UNZIP Installed"
+	    fi
 }
