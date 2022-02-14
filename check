@@ -7,7 +7,7 @@ prueba(){
 	dpkg -s openvpn &> /dev/null  			#revisa si se encuentra istalado
 
  	   if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
-
+a
   	      then
         	    echo "VPN not installed, installing..."  
         	    sudo apt-get update					#te hara una actualizacion 
