@@ -1,8 +1,3 @@
-casa 
-
-
-
-
 Performance(){  
     echo "------------------------"
     echo "------menuPrincipal-----"
@@ -26,7 +21,6 @@ Performance(){
             ;;
         2)
             clear
-            cambios cambios caaaaambioooooooosssssss
 	    'CPU'
             ;;
         3)
