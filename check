@@ -3,8 +3,8 @@
 
 
 prueba(){
-#	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
-#	dpkg -s openvpn &> /dev/null  			
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
+#	dpkg -s openvpn &> /dev/null  		
 # 	   if [ $? -ne 0 ]							
 #
 #  	      then
@@ -15,37 +15,37 @@ prueba(){
 #	        else
 #	            echo    "VPN Installed"
 #	    fi
-    	dpkg -s unzip &> /dev/null  			#revisa si se encuentra istalado
+
+	            sudo apt-get update					#te hara una actualizacion 
+
+            dpkg -s unzip &> /dev/null  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
 	        then
 	            echo "UNZIP not installed, installing..."  
-	            sudo apt-get update					#te hara una actualizacion 
 	            sudo apt-get install unzip		#te instalara el paquete
 	
 	        else
 	            echo    "UNZIP Installed"
 	    fi
-	        	dpkg -s docker-ce &> /dev/null  			#revisa si se encuentra istalado
+	        dpkg -s docker-ce &> /dev/null  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
 	        then
-	            echo "Docker not installed, installing..."  
-	            sudo apt-get update					#te hara una actualizacion 
+	            echo "Docker not installed, installing..."   
 	            sudo apt-get install docker-ce		#te instalara el paquete
 	
 	        else
 	            echo    "Docker Installed"
 	    fi
-	    	        	dpkg -s docker-ce-cli &> /dev/null  			#revisa si se encuentra istalado
+	    dpkg -s docker-ce-cli &> /dev/null  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
 	        then
 	            echo "Docker utilities not installed, installing..."  
-	            sudo apt-get update					#te hara una actualizacion 
 	            sudo apt-get install docker-ce		#te instalara el paquete
 	
 	        else
@@ -57,17 +57,53 @@ prueba(){
 	
 	        then
 	            echo "curl not installed, installing..."  
-	            sudo apt-get update					#te hara una actualizacion 
 	            sudo apt-get install curl		#te instalara el paquete
 	
 	        else
 	            echo    "curl Installed"
 	    fi
-	#    
-	    ca-certificates
-	    lsb-release
-	    gnupg
-	    
-	    containerd.io
+	    	    	        	dpkg -s gnupg &> /dev/null  			#revisa si se encuentra istalado
 
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "gnupg not installed, installing..."  
+	            sudo apt-get install gnupg		#te instalara el paquete
+	
+	        else
+	            echo    "gnupg Installed"
+	    fi
+	    	    	    	        	dpkg -s lsb-release &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "lsb-release not installed, installing..."  
+	            sudo apt-get install lsb-release		#te instalara el paquete
+	
+	        else
+	            echo    "lsb-release Installed"
+	    fi
+	    	    	    	    	        	dpkg -s ca-certificates &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "ca-certificates not installed, installing..."  
+	            sudo apt-get install ca-certificates		#te instalara el paquete
+	
+	        else
+	            echo    "ca-certificates Installed"
+	    fi
+	    	    	    	        	dpkg -s containerd.io &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "containerd.io not installed, installing..."  
+	            sudo apt-get install containerd.io		#te instalara el paquete
+	
+	        else
+	            echo    "containerd.io Installed"
+	    fi
 }
