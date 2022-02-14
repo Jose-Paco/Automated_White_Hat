@@ -22,6 +22,7 @@ prueba(){
 	        then
 	            echo "UNZIP not installed, installing..."  
 	            sudo apt-get update					#te hara una actualizacion 
+mario bros luigi yoshi
 	            sudo apt-get install unzip		#te instalara el paquete
 	
 	        else
