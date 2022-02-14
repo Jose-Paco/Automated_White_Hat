@@ -63,7 +63,7 @@ prueba(){
 	        else
 	            echo    "curl Installed"
 	    fi
-	    
+	#    
 	    ca-certificates
 	    lsb-release
 	    gnupg
