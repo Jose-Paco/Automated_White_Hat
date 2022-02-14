@@ -3,6 +3,8 @@ sdñghslggjaklgdfg
 
 
 
+
+
 Performance(){  
     echo "------------------------"
     echo "------menuPrincipal-----"
@@ -26,7 +28,8 @@ Performance(){
             ;;
         2)
             clear
-            'CPU'
+            cambios cambios caaaaambioooooooosssssss
+	    'CPU'
             ;;
         3)
             clear
