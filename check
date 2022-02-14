@@ -3,19 +3,18 @@
 
 
 prueba(){
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
-	dpkg -s openvpn &> /dev/null  			#revisa si se encuentra istalado
-
- 	   if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
-aa
-  	      then
-        	    echo "VPN not installed, installing..."  
-        	    sudo apt-get update					#te hara una actualizacion 
-        	    sudo apt-get install openvpn		#te instalara el paquete
-	
-	        else
-	            echo    "VPN Installed"
-	    fi
+#	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
+#	dpkg -s openvpn &> /dev/null  			
+# 	   if [ $? -ne 0 ]							
+#
+#  	      then
+#        	    echo "VPN not installed, installing..."  
+#        	    sudo apt-get update					
+#        	    sudo apt-get install openvpn		
+#	
+#	        else
+#	            echo    "VPN Installed"
+#	    fi
     	dpkg -s unzip &> /dev/null  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
@@ -52,5 +51,23 @@ aa
 	        else
 	            echo    "Docker utilities Installed"
 	    fi
+	    	    	        	dpkg -s curl &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "curl not installed, installing..."  
+	            sudo apt-get update					#te hara una actualizacion 
+	            sudo apt-get install curl		#te instalara el paquete
+	
+	        else
+	            echo    "curl Installed"
+	    fi
+	    
+	    ca-certificates
+	    lsb-release
+	    gnupg
+	    
+	    containerd.io
 
 }
