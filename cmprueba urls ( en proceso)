@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "introduce una url: " url
+if [ "$url" != "" ]
+then
+    ping -c 4 $url &
+else
+    echo "Pues si no me quires decir tu url peor para ti"
+fi
