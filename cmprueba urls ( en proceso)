@@ -1,8 +1,19 @@
 #!/bin/bash
+
+
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
     ping -c 4 $url &
+    if [ping == true]
+    then
+        echo "hola"
+    else 
+        echo"no"
 else
     echo "Pues si no me quires decir tu url peor para ti"
 fi
+
+#function prueba() {
+#ping -c 4 $url &
+#}
