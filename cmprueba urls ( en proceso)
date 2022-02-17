@@ -5,7 +5,12 @@ function prueba() {
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
-    ping -c 4 $url > /dev/null
+    wget $url > /dev/null
+    while [ $? != "0" ]
+    do
+      clear
+      'prueba'
+    done
     if [ "$?" == "0" ]
     then
         '_menuPrincipal'
