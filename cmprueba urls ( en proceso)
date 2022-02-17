@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./menu.sh
 
-function prueba() {
+function checkurl() {
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
@@ -9,17 +9,17 @@ then
     while [ $? != "0" ]
     do
       clear
-      'prueba'
+      'checkurl'
     done
     if [ "$?" == "0" ]
     then
         '_menuPrincipal'
-    else
-        echo "adios"
+    #else
+    #    echo "adios"
     fi
 else
     echo "Pues si no me quires decir tu url peor para ti"
 fi
 }
 #main
-'prueba'
+'checkurl'
