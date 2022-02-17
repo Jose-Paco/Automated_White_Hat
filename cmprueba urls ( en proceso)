@@ -1,18 +1,20 @@
 #!/bin/bash
+. ./menu.sh
 
-
+function prueba() {
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
-    if [$prueba == true]
+    ping -c 4 $url > /dev/null
+    if [ "$?" == "0" ]
     then
-        echo "hola"
-    else 
-        echo "no"
+        '_menuPrincipal'
+    else
+        echo "adios"
+    fi
 else
     echo "Pues si no me quires decir tu url peor para ti"
 fi
-
-function prueba() {
-ping -c 4 $url &
 }
+#main
+'prueba'
