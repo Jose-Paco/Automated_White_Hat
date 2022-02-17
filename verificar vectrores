@@ -1,0 +1,6 @@
+if [wget $url | grep"bgin"]
+   diccionario=true
+if [wget $url | grep"filter"]
+   sql=true
+if [wget $url | grep"coment"]
+   xss=true
