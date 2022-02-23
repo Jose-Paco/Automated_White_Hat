@@ -1,11 +1,11 @@
  #!/bin/bash
-function vectores($url)
+function vectores()
 { 
-   login= $(wget $url | grep "login")
-   coment= $(wget $url | grep"comment")
-   filter= $(wget $url | grep"filter") 
-   search= $(wget $url | grep"search")
-   category= $(wget $url | grep"comment")
+   login= $(wget $1 | grep "login")
+   coment= $(wget $1 | grep"comment")
+   filter= $(wget $1 | grep"filter") 
+   search= $(wget $1 | grep"search")
+   category= $(wget $1 | grep"comment")
    if [ -e $login ]
       diccionario=true
    if [ -e $filter ] || [-e $category ]
