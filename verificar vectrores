@@ -1,6 +1,11 @@
-if [wget $url | grep"bgin"]
+login= $(wget $url | grep "login")
+coment= $(wget $url | grep"comment")
+filter= $(wget $url | grep"filter")
+search= $(wget $url | grep"search")
+category= $(wget $url | grep"comment")
+if [ -e $login ]
    diccionario=true
-if [wget $url | grep"filter"]
+if [] || [-e $category ]
    sql=true
-if [wget $url | grep"coment"]
+if [] || [ -e $search ] 
    xss=true
