@@ -1,3 +1,5 @@
+#!/bin/bash
+
 login= $(wget $url | grep "login")
 coment= $(wget $url | grep"comment")
 filter= $(wget $url | grep"filter")
@@ -5,7 +7,7 @@ search= $(wget $url | grep"search")
 category= $(wget $url | grep"comment")
 if [ -e $login ]
    diccionario=true
-if [] || [-e $category ]
+if [ -e $filter ] || [-e $category ]
    sql=true
-if [] || [ -e $search ] 
+if [ -e $comment ] || [ -e $search ] 
    xss=true
