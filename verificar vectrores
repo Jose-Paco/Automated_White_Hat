@@ -1,5 +1,5 @@
  #!/bin/bash
-vectores($url)
+function vectores($url)
 { 
    login= $(wget $url | grep "login")
    coment= $(wget $url | grep"comment")
