@@ -3,11 +3,8 @@
 
 
 prueba(){
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
-#	dpkg -s openvpn &> /dev/null
- 	echo \
-  	"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  	$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
 # 	   if [ $? -ne 0 ]							
 #
 #  	      then
@@ -31,28 +28,6 @@ prueba(){
 	
 	        else
 	            echo    "UNZIP Installed"
-	    fi
-	        dpkg -s docker-ce &> /dev/null  			#revisa si se encuentra istalado
-
-	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
-	
-	        then
-	            echo "Docker not installed, installing..."   
-	            sudo apt-get install docker-ce		#te instalara el paquete
-	
-	        else
-	            echo    "Docker Installed"
-	    fi
-	    dpkg -s docker-ce-cli &> /dev/null  			#revisa si se encuentra istalado
-
-	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
-	
-	        then
-	            echo "Docker utilities not installed, installing..."  
-	            sudo apt-get install docker-ce		#te instalara el paquete
-	
-	        else
-	            echo    "Docker utilities Installed"
 	    fi
 	    	    	        	dpkg -s curl &> /dev/null  			#revisa si se encuentra istalado
 
@@ -87,6 +62,11 @@ prueba(){
 	        else
 	            echo    "lsb-release Installed"
 	    fi
+	    	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" &
+	 	echo \
+  	"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  	$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+#	dpkg -s openvpn &> /dev/null
 	    	    	    	    	        	dpkg -s ca-certificates &> /dev/null  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
@@ -108,5 +88,28 @@ prueba(){
 	
 	        else
 	            echo    "containerd.io Installed"
+	    fi
+	    
+	        dpkg -s docker-ce &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "Docker not installed, installing..."   
+	            sudo apt-get install docker-ce		#te instalara el paquete
+	
+	        else
+	            echo    "Docker Installed"
+	    fi
+	    dpkg -s docker-ce-cli &> /dev/null  			#revisa si se encuentra istalado
+
+	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
+	
+	        then
+	            echo "Docker utilities not installed, installing..."  
+	            sudo apt-get install docker-ce-cli		#te instalara el paquete
+	
+	        else
+	            echo    "Docker utilities Installed"
 	    fi
 }
