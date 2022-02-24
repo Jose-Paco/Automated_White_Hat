@@ -12,3 +12,4 @@ function vectores(){
    if [ -e $comment ] || [ -e $search ] 
       xss=true
 }
+#podemos meter mas patrones al filtro
