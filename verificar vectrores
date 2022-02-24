@@ -1,6 +1,5 @@
  #!/bin/bash
-function vectores()
-{ 
+function vectores(){ 
    login= $(wget $1 | grep "login")
    coment= $(wget $1 | grep"comment")
    filter= $(wget $1 | grep"filter") 
