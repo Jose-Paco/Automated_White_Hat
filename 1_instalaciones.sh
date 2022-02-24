@@ -2,7 +2,7 @@
          
 
 
-prueba(){
+function instalaciones(){
 
 
 # 	   if [ $? -ne 0 ]							
