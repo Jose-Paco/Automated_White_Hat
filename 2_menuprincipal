@@ -43,4 +43,4 @@ function _menuPrincipal()
 	esac
 }
 #main
-'_menuPrincipal'
+#'_menuPrincipal'
