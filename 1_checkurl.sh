@@ -13,13 +13,9 @@ then
     done
     if [ "$?" == "0" ]
     then
-        '_menuPrincipal'
-    #else
-    #    echo "adios"
+        return $url
     fi
-else
-    echo "Pues si no me quires decir tu url peor para ti"
 fi
 }
 #main
-'checkurl'
+#'checkurl'
