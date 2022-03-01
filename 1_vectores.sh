@@ -11,7 +11,7 @@ function vectores(){
    product= $(wget $1 | grep "product") 
    if [ -e $login ] || [ -e $password ] || [ -e $username ]
       diccionario=true
-   if [ -e $filter ] || [-e $category ] || [ -e $product ]
+   if [ -e $filter ] || [ -e $category ] || [ -e $product ]
       sql=true
    if [ -e $comment ] || [ -e $search ] || [ -e $img ] 
       xss=true
