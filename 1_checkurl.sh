@@ -13,6 +13,7 @@ then
     if [ "$?" == "0" ]
     then
         return $url
+    fi
 fi
 }
 #main
