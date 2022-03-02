@@ -8,13 +8,11 @@ then
     wget $url > /dev/null
     while [ $? != "0" ]
     do
-      clear
       'checkurl'
     done
     if [ "$?" == "0" ]
     then
         return $url
-    fi
 fi
 }
 #main
