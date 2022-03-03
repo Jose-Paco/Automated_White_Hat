@@ -24,7 +24,7 @@ function instalaciones(){
 	
 	        then
 	            echo "UNZIP not installed, installing..."  
-	            sudo apt-get install unzip	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install unzip > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "UNZIP Installed"
@@ -35,7 +35,7 @@ function instalaciones(){
 	
 	        then
 	            echo "curl not installed, installing..."  
-	            sudo apt-get install curl	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install curl > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "curl Installed"
@@ -46,7 +46,7 @@ function instalaciones(){
 	
 	        then
 	            echo "gnupg not installed, installing..."  
-	            sudo apt-get install gnupg	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install gnupg > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "gnupg Installed"
@@ -57,7 +57,7 @@ function instalaciones(){
 	
 	        then
 	            echo "lsb-release not installed, installing..."  
-	            sudo apt-get install lsb-release	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install lsb-release > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "lsb-release Installed"
@@ -88,7 +88,7 @@ function instalaciones(){
 	
 	        then
 	            echo "containerd.io not installed, installing..."  
-	            sudo apt-get install containerd.io	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install containerd.io > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "containerd.io Installed"
@@ -100,7 +100,7 @@ function instalaciones(){
 	
 	        then
 	            echo "Docker not installed, installing..."   
-	            sudo apt-get install docker-ce	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install docker-ce > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "Docker Installed"
@@ -111,7 +111,7 @@ function instalaciones(){
 	
 	        then
 	            echo "Docker utilities not installed, installing..."  
-	            sudo apt-get install docker-ce-cli	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install docker-ce-cli > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "Docker utilities Installed"
