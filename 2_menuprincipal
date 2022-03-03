@@ -1,46 +1,16 @@
 #!/bin/bash
-. ./funcion.sh
+#source /repositorios/aquivanelrestodesh.
+./funcion.sh
 'controlerror'
 
 #Muestra el menu general
-function _menuPrincipal()
-{  
+function _menuPrincipal() {  
     clear
-	echo "------------------------"
-    echo "------practica UF2------"
-    echo "------------------------"
-    echo
-    echo "1) Performance"
-    echo "2) Programación de tareas"
-    echo "3) Backups"
-    echo "4) Salir"
-   
-    echo
-    echo -n "Indica una opcion: "
-    read op
-   
-    case $op in
-		1)
-			clear
-			'Performance'
-			;;
-		2)
-			clear
-			'Programación_de_tareas'
-			;;
-		3)
-			clear
-			'Backups'
-			;;
-		4)
-			clear
-			exit
-			;;
-		*)
-			clear
-			'_menuPrincipal'
-			;;
-	esac
+    url=$(checkurl)
+    instalaciones
+    vector=$(vectores '$url')
+    echo "Los ataques disponibles a la página web " . $url . " son los siguientes: " . ${vector[@]}
+    read -p "Para ejecutar un ataque de Diccionario pulsa 1\nPara ejecutar un ataque de SqlInjection pulsa 2\nPara ejecutar un ataque de XSS pulsa 3." tipoDeAtaque
 }
 #main
 #'_menuPrincipal'
