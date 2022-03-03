@@ -1,5 +1,9 @@
  #!/bin/bash
-function vectores(){ 
+function vectores(){
+   declare -a vectores=()
+   xss=false
+   diccionario=false
+   sql=false
    login= $(wget -q -O - $1 | grep "login")
    coment= $(wget -q -O - $1 | grep "comment")
    filter= $(wget -q -O -  $1 | grep "filter") 
@@ -11,14 +15,16 @@ function vectores(){
    product= $(wget -q -O - $1 | grep "product") 
    if [ -e $login ] || [ -e $password ] || [ -e $username ]
       diccionario=true
+      vectores+=("diccionario")
    fi
    if [ -e $filter ] || [ -e $category ] || [ -e $product ]
       sql=true
+      vectores+=("sql")
    fi
    if [ -e $comment ] || [ -e $search ] || [ -e $img ] 
       xss=true
+      vectores+=("xss")
    fi
-   declare -a vectores=('$xss' '$sql' '$diccionario')
-   return $vectores
+   return $vectores()
 }
 #podemos meter mas patrones al filtro
