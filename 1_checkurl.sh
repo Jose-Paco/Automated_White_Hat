@@ -5,10 +5,10 @@ function checkurl() {
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
-    wget $url > /dev/null
+    wget $url &> /dev/null
     while [ $? != "0" ]
     do
-      'checkurl'
+      'checkurl' 
     done
     if [ "$?" == "0" ]
     then
