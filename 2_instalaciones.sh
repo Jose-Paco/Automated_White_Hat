@@ -29,7 +29,7 @@ function instalaciones(){
 	        else
 	            echo    "UNZIP Installed"
 	    fi
-	    	    	        	dpkg -s curl &> /dev/null  			#revisa si se encuentra istalado
+	    	    	        	dpkg -s curl > /dev/null 2>&1  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
@@ -40,7 +40,7 @@ function instalaciones(){
 	        else
 	            echo    "curl Installed"
 	    fi
-	    	    	        	dpkg -s gnupg &> /dev/null  			#revisa si se encuentra istalado
+	    	    	        	dpkg -s gnupg > /dev/null 2>&1  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
@@ -51,7 +51,7 @@ function instalaciones(){
 	        else
 	            echo    "gnupg Installed"
 	    fi
-	    	    	    	        	dpkg -s lsb-release &> /dev/null  			#revisa si se encuentra istalado
+	    	    	    	        	dpkg -s lsb-release > /dev/null 2>&1  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
@@ -82,7 +82,7 @@ function instalaciones(){
 	        else
 	            echo    "ca-certificates Installed"
 	    fi
-	    	    	    	        	dpkg -s containerd.io &> /dev/null  			#revisa si se encuentra istalado
+	    	    	    	        	dpkg -s containerd.io > /dev/null 2>&1 			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
