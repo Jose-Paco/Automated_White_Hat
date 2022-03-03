@@ -10,7 +10,8 @@ function _menuPrincipal() {
     instalaciones
     vector=$(vectores '$url')
     echo "Los ataques disponibles a la página web " . $url . " son los siguientes: " . ${vector[@]}
-    read -p "Para ejecutar un ataque de Diccionario pulsa 1\nPara ejecutar un ataque de SqlInjection pulsa 2\nPara ejecutar un ataque de XSS pulsa 3." tipoDeAtaque
+    echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
+    read -p "" tipoDeAtaque
 }
 #main
 #'_menuPrincipal'
