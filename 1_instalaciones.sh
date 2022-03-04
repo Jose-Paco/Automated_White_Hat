@@ -29,7 +29,9 @@ function instalaciones(){
 	        else
 	            echo    "UNZIP Installed"
 	    fi
+	    
 	    dpkg -s curl > /dev/null 2>&1  			#revisa si se encuentra istalado
+	    
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
 	        then
