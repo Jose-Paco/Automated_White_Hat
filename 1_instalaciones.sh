@@ -16,7 +16,7 @@ function instalaciones(){
 #	            echo    "VPN Installed"
 #	    fi
 
-	            sudo apt-get update	> /dev/null 2>&1				#te hara una actualizacion 
+	    sudo apt-get update	> /dev/null 2>&1				#te hara una actualizacion 
 
             dpkg -s unzip > /dev/null 2>&1 			#revisa si se encuentra istalado
 
@@ -29,7 +29,7 @@ function instalaciones(){
 	        else
 	            echo    "UNZIP Installed"
 	    fi
-	    	    	        	dpkg -s curl > /dev/null 2>&1  			#revisa si se encuentra istalado
+	    dpkg -s curl > /dev/null 2>&1  			#revisa si se encuentra istalado
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
 	        then
@@ -39,7 +39,7 @@ function instalaciones(){
 	        else
 	            echo    "curl Installed"
 	    fi
-	    	    	        	dpkg -s gnupg > /dev/null 2>&1  			#revisa si se encuentra istalado
+	    dpkg -s gnupg > /dev/null 2>&1  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
@@ -50,22 +50,22 @@ function instalaciones(){
 	        else
 	            echo    "gnupg Installed"
 	    fi
-	    	    	    	        	dpkg -s lsb-release > /dev/null 2>&1  			#revisa si se encuentra istalado
+	    dpkg -s lsb-release > /dev/null 2>&1  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	    	
 	        then
 	            echo "lsb-release not installed, installing..."  
 	            sudo apt-get install lsb-release -y	> /dev/null 2>&1	#te instalara el paquete
-        else
+                else
 	            echo    "lsb-release Installed"
 	    fi
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null &
-         sudo apt-get update	> /dev/null 2>&1
-	    	    	    	    	        	dpkg -s ca-certificates > /dev/null 2>&1 			#revisa si se encuentra istalado
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+            echo \
+            "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+            $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null &
+            echo " " ; sudo apt-get update > /dev/null 2>&1
+	    dpkg -s ca-certificates > /dev/null 2>&1 			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
@@ -76,7 +76,7 @@ echo \
 	        else
 	            echo    "ca-certificates Installed"
 	    fi
-	    	    	    	        	dpkg -s containerd.io > /dev/null 2>&1 			#revisa si se encuentra istalado
+	    dpkg -s containerd.io > /dev/null 2>&1 			#revisa si se encuentra istalado
 
 	    
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
@@ -89,7 +89,7 @@ echo \
 	            echo    "containerd.io Installed"
 	    fi
 	    
-	        dpkg -s docker-ce > /dev/null 2>&1 			#revisa si se encuentra istalado
+	    dpkg -s docker-ce > /dev/null 2>&1 			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
 	
@@ -98,9 +98,9 @@ echo \
 	            sudo apt-get install docker-ce -y > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
-echo "Docker Installed"
+                    echo "Docker Installed"
 
-    fi
+            fi
 	    dpkg -s docker-ce-cli > /dev/null 2>&1  			#revisa si se encuentra istalado
 
 	    if [ $? -ne 0 ]								#si esta dara 1 asi que te dira que esta instalado y no hara nada 
@@ -112,5 +112,5 @@ echo "Docker Installed"
 
 	        else
 	            echo    "Docker utilities Installed"
-fi
+            fi
 }
