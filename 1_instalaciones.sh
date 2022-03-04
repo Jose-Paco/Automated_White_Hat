@@ -24,7 +24,7 @@ function instalaciones(){
 	
 	        then
 	            echo "UNZIP not installed, installing..."  
-	            sudo apt-get install unzip -y	> /dev/null 2>&1	#te instalara el paquete
+	            sudo apt-get install unzip -y > /dev/null 2>&1	#te instalara el paquete
 	
 	        else
 	            echo    "UNZIP Installed"
