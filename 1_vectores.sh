@@ -11,7 +11,6 @@ function vectores(){
    category=$(wget -q -O - "$1" | grep "comment")
    password=$(wget -q -O - "$1" | grep "password")
    username=$(wget -q -O - "$1" | grep "username")
-   img=$(wget -q -O -  "$1" | grep "img")
    product=$(wget -q -O - "$1" | grep "product") 
    if [ "$login" ] || [ "$password" ] || [ "$username" ]
    then
@@ -21,7 +20,7 @@ function vectores(){
    then
       vectores+=("sql")
    fi
-   if [ "$coment" ] || [ "$search" ] || [ "$img" ]
+   if [ "$coment" ] || [ "$search" ]
    then
       vectores+=("xss")
    fi
