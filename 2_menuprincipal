@@ -15,8 +15,6 @@ function _menuPrincipal() {
         read -p "" tipoDeAtaque
     done
     instalaciones
-    swarm
-    pull_zap
     case $tipoDeAtaque in
 		1)
 			clear
