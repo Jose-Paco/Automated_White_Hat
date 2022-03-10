@@ -12,4 +12,5 @@ echo \
 sudo apt update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo docker pull owasp/zap2docker-stable
-sudo docker run owasp/zap2docker-stable
+sudo docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained     --start-options '-config api.disablekey=true' https://acac1f0f1fb13e1fc1393f69001b00b8.web-security-academy.net
+#ejemplo que levanta el docker
