@@ -2,7 +2,7 @@
 M14project
 ## Como Funciona
 ## Xss
-[culo](https://pages.github.com/)
+[culo](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/2_xss)
 ```
 git status
 git add
