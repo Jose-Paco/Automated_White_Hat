@@ -5,21 +5,15 @@ M14project
 ## XSS
 [Documento donde se encuentra nuesto XSS](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/2_xss)
 ```
-git status
-git add
-git commit
+comandos para poner que queremos que copien etc ... 
 ```
 ## SQL
 [Documento donde se encuentra nuesto SQL](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/SQLi.sh)
 ```
-git status
-git add
-git commit
+comandos para poner que queremos que copien etc ... 
 ```
 ## Fuerza Bruta
 [Documento donde se encuentra nuesto ataque de Diccionario](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/diccionari02.sh)
 ```
-git status
-git add
-git commit
+comandos para poner que queremos que copien etc ... 
 ```
