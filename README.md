@@ -1,5 +1,6 @@
 # Automated_White_Hat
 M14project
+<!-- This content will not appear in the rendered Markdown -->
 ## Como Funciona
 [script que controla url](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/1_checkurl.sh)
 ## XSS
