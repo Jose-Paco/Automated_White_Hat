@@ -1,3 +1,0 @@
-arrVar=("?search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E")
-
-curl --verbose $URLnueva | grep "200"
