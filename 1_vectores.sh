@@ -8,7 +8,7 @@ function vectores(){
    coment=$(wget -q -O - "$1" | grep "comment")
    filter=$(wget -q -O -  "$1" | grep "filter") 
    search=$(wget -q -O - "$1" | grep "search")
-   category=$(wget -q -O - "$1" | grep "comment")
+   category=$(wget -q -O - "$1" | grep "category")
    password=$(wget -q -O - "$1" | grep "password")
    username=$(wget -q -O - "$1" | grep "username")
    product=$(wget -q -O - "$1" | grep "product") 
