@@ -1,7 +1,7 @@
 if  [[  ]]
 then
   #aqui ejecutamos xss con get, checkear si esta search
-  if [[ $search ]]
+  if [[ $search ]] # | grep 'method=\"GET\"' ]]
   then
     XSS="%3Cscript%3Ealert%281%29%3C%2Fscript%3E"
     ATTACK="$URL$XSS"
