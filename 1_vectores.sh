@@ -6,7 +6,6 @@ function vectores(){
    sql=false
    csrf=$(wget -q -O - "$1" | grep "csref")
    login=$(wget -q -O - "$1" | grep "login")
-   coment=$(wget -q -O - "$1" | grep "comment")
    filter=$(wget -q -O -  "$1" | grep "filter") 
    search=$(wget -q -O - "$1" | grep "search")
    category=$(wget -q -O - "$1" | grep "category")
@@ -26,7 +25,7 @@ function vectores(){
     then
        vectores+=("sql")
     fi
-    if [ "$coment" ] || [ "$search" ]
+    if [ "$search" ]
     then
        vectores+=("xss")
     fi
