@@ -7,16 +7,12 @@
 function _menuPrincipal() {  
     clear
     url=$(checkurl)
-    if [ $vectores = "csrf"]
+    vector=$(vectores '$url')
+    if [ $vector = "csrf"]
     then
     	echo "Esta pagina no és vulnerable a ninguno de nuestros ataques, puedes probar con otra url."
 	exit
     fi
-    if [ "$login" ] || [ "$password" ] || [ "$username" ]
-   then
-      vectores+=("diccionario")
-   fi
-    vector=$(vectores '$url')
     echo "Los ataques disponibles a la página web " . $url . " son los siguientes: " . ${vector[@]}
     while [$tipoDeAtaque > 3 | tipoDeAtaque < 1]
     do 
