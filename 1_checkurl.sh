@@ -2,7 +2,7 @@
 . ./menu.sh
 
 function checkurl() {
-read -p "introduce una url: " url
+read -p "Introduce una url: " url
 if [ "$url" != "" ]
 then
     wget $url &> /dev/null
