@@ -4,7 +4,7 @@
 'controlerror'
 
 #Muestra el menu general
-function _menuPrincipal() {  
+function 3_menuPrincipal() {  
     clear
     url=$(checkurl)
     vector=$(vectores '$url')
