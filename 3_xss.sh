@@ -1,5 +1,5 @@
 #!/bin/bash
-function 2_xss(){
+function 3_xss(){
 #aqui ejecutamos xss con get, checkear si esta search
 if [[ $search ]] # | grep 'method=\"GET\"' ]]
 then
