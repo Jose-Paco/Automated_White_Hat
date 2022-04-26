@@ -18,15 +18,15 @@ function 3_menuPrincipal() {
     case $tipoDeAtaque in
 		1)
 			clear
-			ataque_diccionario
+			3_xss.sh
 			;;
 		2)
 			clear
-			ataque_sql
+			3_sqli.sh
 			;;
 		3)
 			clear
-			ataque_xss
+			3_xss.sh
 			;;
 	esac
 }
