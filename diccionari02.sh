@@ -44,8 +44,8 @@ then
 else
     echo "El Fichero no es valido, usaremos un diccionario propio"
     
-    wget "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwii7MnruK_3AhW67rsIHY4MDP0QFnoECAcQAQ&url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&usg=AOvVaw3snAERl1mU6Ccr4WFEazBd"
-    document= rockyou.txt
+    wget -q "https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt"
+    document=rockyou.txt
 start=1
 total=$(wc -l < $document)
 while [ $start -le $total ]
@@ -59,4 +59,8 @@ while [ $start -le $total ]
     ((start = start + 1))
 done
 echo -e "El usuario es $usuari y su contraseña és $password"
+if [ -f  rockyou.txt ] 
+then
+    rm rockyou.txt
+fi
 }
