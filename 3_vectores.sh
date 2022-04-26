@@ -1,5 +1,5 @@
  #!/bin/bash
-function vectores(){
+function 3_vectores(){
    declare -a vectores=()
    xss=false
    diccionario=false
