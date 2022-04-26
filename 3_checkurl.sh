@@ -1,7 +1,5 @@
 #!/bin/bash
-. ./menu.sh
-
-function checkurl() {
+function 3_checkurl() {
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
