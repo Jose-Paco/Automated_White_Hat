@@ -7,6 +7,7 @@ M14project
 #### Como Funciona
 Una secuencia de comandos en sitios cruzados o Cross-site scripting (XSS por sus siglas en idioma inglés) es un tipo de vulnerabilidad informática o agujero de seguridad típico de las aplicaciones Web, que puede permitir a una tercera persona inyectar en páginas web visitadas por el usuario código JavaScript o en otro lenguaje similar  Se puede evitar usando medidas como CSP, política del mismo origen, etcétera.
 Es posible encontrar una vulnerabilidad de Cross-Site Scripting en aplicaciones que tengan entre sus funciones presentar la información en un navegador web u otro contenedor de páginas web. Sin embargo, no se limita a sitios web disponibles en Internet, ya que puede haber aplicaciones locales vulnerables a XSS, o incluso el navegador en sí.
+
 [Documento donde se encuentra nuesto XSS](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/3_xss.sh)
 ```
 comandos para poner que queremos que copien etc ... 
@@ -14,6 +15,7 @@ comandos para poner que queremos que copien etc ...
 ## SQL
 #### Como Funciona
 La inyección de SQL es un tipo de ciberataque encubierto en el cual un hacker inserta código propio en un sitio web con el fin de quebrantar las medidas de seguridad y acceder a datos protegidos. Una vez dentro, puede controlar la base de datos del sitio web y secuestrar la información de los usuarios. Le explicamos cómo funcionan los ataques de inyección de SQL, cómo combatirlos y cómo una herramienta antivirus potente lo puede proteger contra las consecuencias.
+
 [Documento donde se encuentra nuesto SQL](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/3_sqli.sh)
 ```
 comandos para poner que queremos que copien etc ... 
