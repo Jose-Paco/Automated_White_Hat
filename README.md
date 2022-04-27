@@ -1,11 +1,12 @@
 # Automated_White_Hat
 M14project
 <!-- This content will not appear in the rendered Markdown -->
+
+[script que controla url](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/1_checkurl.sh)
+## XSS
 #### Como Funciona
 Una secuencia de comandos en sitios cruzados o Cross-site scripting (XSS por sus siglas en idioma inglés) es un tipo de vulnerabilidad informática o agujero de seguridad típico de las aplicaciones Web, que puede permitir a una tercera persona inyectar en páginas web visitadas por el usuario código JavaScript o en otro lenguaje similar  Se puede evitar usando medidas como CSP, política del mismo origen, etcétera.
 Es posible encontrar una vulnerabilidad de Cross-Site Scripting en aplicaciones que tengan entre sus funciones presentar la información en un navegador web u otro contenedor de páginas web. Sin embargo, no se limita a sitios web disponibles en Internet, ya que puede haber aplicaciones locales vulnerables a XSS, o incluso el navegador en sí.
-[script que controla url](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/1_checkurl.sh)
-## XSS
 [Documento donde se encuentra nuesto XSS](https://github.com/Jose-Paco/Automated_White_Hat/blob/ataques/3_xss.sh)
 ```
 comandos para poner que queremos que copien etc ... 
