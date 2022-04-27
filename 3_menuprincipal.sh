@@ -38,6 +38,19 @@ function 3_menuPrincipal() {
 					3_xss.sh
 					;;
 			esac
+		else
+			echo -e "Para ejecutar un ataque de Diccionario pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
+     			read -p "" tipoDeAtaque
+			3_instalaciones
+			case $tipoDeAtaque in
+				2)
+					clear
+					3_sqli.sh
+					;;
+				3)
+					clear
+					3_xss.sh
+					;;
 		fi
 	else
 		if [[ ${vector[@]} | grep 'sql' ]]
@@ -64,7 +77,6 @@ function 3_menuPrincipal() {
 					clear
 					3_xss.sh
 					;;
-			else
 		fi
 	fi
     else
@@ -93,6 +105,7 @@ function 3_menuPrincipal() {
 					clear
 					3_sqli.sh
 					;;
+		fi
 	else
 		if [[ ${vector[@]} | grep 'diccionario' ]]
 			echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\n"
@@ -104,7 +117,7 @@ function 3_menuPrincipal() {
 					3_xss.sh
 					;;
 
-		esac
+			esac
 		else
 			if [[ ${vector[@]} | grep 'csrf' ]]
 			then
