@@ -12,29 +12,101 @@ source 3_vectores.sh
 #Muestra el menu general
 function 3_menuPrincipal() {  
     clear
-    url=$(checkurl)
-    vector=$(vectores '$url')
+    url=$(3_checkurl)
+    vector=$(3_vectores '$url')
     echo "Los ataques disponibles a la página web " . $url . " son los siguientes: " . ${vector[@]}
-    while [$tipoDeAtaque > 3 | tipoDeAtaque < 1]
+    if [[ ${vector[@]} | grep 'xss' ]]
+    then
+    	if [[ ${vector[@]} | grep 'diccionario' ]]
+	then
+		if [[ ${vector[@]} | grep 'sql' ]]
+		then
+		        echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
+     			read -p "" tipoDeAtaque
+			3_instalaciones
+			case $tipoDeAtaque in
+				1)
+					clear
+					3_xss.sh
+					;;
+				2)
+					clear
+					3_sqli.sh
+					;;
+				3)
+					clear
+					3_xss.sh
+					;;
+			esac
+		fi
+	else
+		if [[ ${vector[@]} | grep 'diccionario' ]]
+		then
+			if [[ ${vector[@]} | grep 'sql' ]]
+			
+			echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de XSS pulsa 3."
+     			read -p "" tipoDeAtaque
+			3_instalaciones
+			case $tipoDeAtaque in
+				1)
+					clear
+					3_xss.sh
+					;;
+				3)
+					clear
+					3_xss.sh
+					;;
+			esac
+	fi
+    else
+    	if [[ ${vector[@]} | grep 'sql' ]]
+	then
+			echo -e "Para ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
+     			read -p "" tipoDeAtaque
+			3_instalaciones
+			case $tipoDeAtaque in
+				1)
+					clear
+					3_xss.sh
+					;;
+				2)
+					clear
+					3_sqli.sh
+					;;
+				3)
+					clear
+					3_xss.sh
+					;;
+			esac
+	else
+		echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
+     		read -p "" tipoDeAtaque
+		3_instalaciones
+		case $tipoDeAtaque in
+			1)
+				clear
+				3_xss.sh
+				;;
+			2)
+				clear
+				3_sqli.sh
+				;;
+			3)
+				clear
+				3_xss.sh
+				;;
+		esac
+	fi
+    fi
+    
+    
+    
+    
+    
+    while [$vector > 3 | $vector < 1]
     do 
         echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
         read -p "" tipoDeAtaque
-    done
-    instalaciones
-    case $tipoDeAtaque in
-		1)
-			clear
-			3_xss.sh
-			;;
-		2)
-			clear
-			3_sqli.sh
-			;;
-		3)
-			clear
-			3_xss.sh
-			;;
-	esac
 }
 #main
 #'_menuPrincipal'
