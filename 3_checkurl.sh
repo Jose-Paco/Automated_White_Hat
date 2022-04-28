@@ -1,5 +1,5 @@
 #!/bin/bash
-function 3_checkurl() {
+3_checkurl() {
 read -p "introduce una url: " url
 if [ "$url" != "" ]
 then
