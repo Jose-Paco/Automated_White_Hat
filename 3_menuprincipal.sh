@@ -1,16 +1,16 @@
 #!/bin/bash
 #source /repositorios/aquivanelrestodesh.
 #./funcion.sh
-source 3_controlerror.sh
-source 3_volvermenu.sh
-source 3_instalaciones.sh
-source 3_diccionario.sh
-source 3_checkurl.sh
-source 3_xss.sh
-source 3_sqli.sh
-source 3_vectores.sh
+source controlerror.sh
+source volvermenu.sh
+source instalaciones.sh
+source diccionario.sh
+source checkurl.sh
+source xss.sh
+source sqli.sh
+source vectores.sh
 #Muestra el menu general
-3_menuPrincipal() {  
+menuPrincipal() {  
     clear
     url=$(3_checkurl)
     vector=$(3_vectores '$url')
