@@ -1,35 +1,35 @@
 #!/bin/bash
-source 3_controlerror.sh
-source 3_volvermenu.sh
-source 3_instalaciones.sh
-source 3_diccionario.sh
-source 3_checkurl.sh
-source 3_xss.sh
-source 3_sqli.sh
-source 3_vectores.sh
-function 3_menuPrincipal() {  
+source controlerror.sh
+source volvermenu.sh
+source instalaciones.sh
+source diccionario.sh
+source checkurl.sh
+source xss.sh
+source sqli.sh
+source vectores.sh
+function menuPrincipal() {  
     clear
-    url=$(3_checkurl)
-    vector=$(3_vectores '$url')
+    url=$(checkurl)
+    vector=$(vectores '$url')
     #if csrf "es segura la web contra esta herramienta, else lo siguiente
     echo "Los ataques disponibles a la página web " . $url . " son los que aparecen a continuación: "
     if [[ echo $vector | grep 'xss' ]]
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			'diccionario'
 			;;
 		2)
 			clear
-			3_sqli.sh
+			'sqli'
 			;;
 		3)
 			clear
-			3_xss.sh
+			'xss'
 			;;
 	esac
      else
@@ -37,15 +37,15 @@ function 3_menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 		2)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
       else
@@ -53,15 +53,15 @@ function 3_menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SQL pulsa 2."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 		2)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 	esac
       else
@@ -69,11 +69,11 @@ function 3_menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 	esac
       else
@@ -81,15 +81,15 @@ function 3_menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de SQL pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 		2)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
     	if [[ echo $vector | grep 'diccionario' ]]
@@ -98,33 +98,33 @@ function 3_menuPrincipal() {
 		then
 		        echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
      			read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				1)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 				2)
 					clear
-					3_sqli.sh
+					sqli.sh
 					;;
 				3)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 			esac
 					else
 			echo -e "Para ejecutar un ataque de Diccionario pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
      			read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				2)
 					clear
-					3_sqli.sh
+					sqli.sh
 					;;
 				3)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 		fi
 	else
@@ -132,25 +132,25 @@ function 3_menuPrincipal() {
 		then
 			echo -e "Para ejecutar un ataque de SqlInjection pulsa 1.\nPara ejecutar un ataque de XSS pulsa 3."
      			read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				1)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 				3)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 			esac
 		else
 			echo -e "Para ejecutar un ataque de XSS pulsa 3."
      			read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				1)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 			else
 		fi
@@ -160,11 +160,11 @@ function 3_menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de XSS pulsa 1."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
     else
@@ -172,11 +172,11 @@ function 3_menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de SQL pulsa 1."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 	esac
     	if [[ echo $vector | grep 'sql' ]]
@@ -184,32 +184,32 @@ function 3_menuPrincipal() {
 		if [[ ${vector[@]} | grep 'diccionario' ]]
 			echo -e "Para ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de Diccionario pulsa 3."
      			read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				2)
 					clear
-					3_sqli.sh
+					sqli.sh
 					;;
 				3)
 					clear
-					3_xss.sh
+					xss.sh
 					;;
 			esac
 		else
 			echo -e "Para ejecutar un ataque de SqlInjection pulsa 2"
      			read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				2)
 					clear
-					3_sqli.sh
+					sqli.sh
 					;;
 		fi
 	else
 		if [[ echo $vector | grep 'diccionario' ]]
 			echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\n"
 	     		read -p "" tipoDeAtaque
-			3_instalaciones
+			instalaciones
 			case $tipoDeAtaque in
 				1)
 					clear
@@ -239,5 +239,3 @@ function 3_menuPrincipal() {
         echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
         read -p "" tipoDeAtaque
 }
-#main
-#'_menuPrincipal'
