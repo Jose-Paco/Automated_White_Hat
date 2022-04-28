@@ -1,6 +1,6 @@
- #!/bin/bash
+#!/bin/bash
 vectores() {
-   declare -a vectores=()
+   vectores=( "mesa" "silla" )
    csrf=$(wget -q -O - "$1" | grep "csrf")
    login=$(wget -q -O - "$1" | grep "login")
 #   comment=$(wget -q -O - "$1" | grep "comment")
