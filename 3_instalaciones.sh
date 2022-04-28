@@ -1,5 +1,5 @@
 #!/bin/bash
-3_instalaciones() {
+instalaciones() {
 
 
 # 	   if [ $? -ne 0 ]							
