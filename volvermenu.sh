@@ -13,7 +13,7 @@ volvermenu() {
         *)  
             echo "No has introducido m ni q"									#si marcas cualquier cosa te dara error y te devovlera al mismo menu hasta que pongas una de las 2 condiciones que hay
             clear
-            '3_volvermenu'
+	    'volvermenu'
             ;;
     esac
 }
