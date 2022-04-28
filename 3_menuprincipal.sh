@@ -107,7 +107,7 @@ menuPrincipal() {
 			;;
 	esac
     else
-	if [[ ${vector[@]} | grep 'sql' ]]
+	if [[  echo $vector  | grep 'sql' ]]
     then
     	echo -e "Para ejecutar un ataque de SQL pulsa 1."
      	read -p "" tipoDeAtaque
