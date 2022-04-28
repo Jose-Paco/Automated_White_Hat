@@ -14,8 +14,8 @@ menuPrincipal() {
     clear
     url=$(3_checkurl)
     vector=$(3_vectores '$url')
-    echo "Los ataques disponibles a la página web " . $url . " son los siguientes: " . ${vector[@]}
-    if [[ ${vector[@]} | grep 'xss' && grep 'diccionario' && grep 'sql' ]]
+    echo "Los ataques disponibles a la página web " . $url . " son los que porponemos a continuacion:\n"
+    if [[ echo $vector | grep 'xss' && grep 'diccionario' && grep 'sql' ]]
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
      	read -p "" tipoDeAtaque
@@ -35,7 +35,7 @@ menuPrincipal() {
 			;;
 	esac
      else
-	if [[ ${vector[@]} | grep 'xss' && grep 'diccionario' ]]
+	if [[ $ echo $vector  | grep 'xss' && grep 'diccionario' ]]
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
      	read -p "" tipoDeAtaque
@@ -51,7 +51,7 @@ menuPrincipal() {
 			;;
 	esac
       else
-	if [[ ${vector[@]} | grep 'sql' && grep 'diccionario' ]]
+	if [[  echo $vector | grep 'sql' && grep 'diccionario' ]]
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SQL pulsa 2."
      	read -p "" tipoDeAtaque
@@ -67,7 +67,7 @@ menuPrincipal() {
 			;;
 	esac
       else
-	if [[ ${vector[@]} | grep 'diccionario' ]]
+	if [[  echo $vector  | grep 'diccionario' ]]
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1."
      	read -p "" tipoDeAtaque
@@ -79,7 +79,7 @@ menuPrincipal() {
 			;;
 	esac
       else
-	if [[ ${vector[@]} | grep 'xss' && grep 'sql' ]]
+	if [[ echo $vector | grep 'xss' && grep 'sql' ]]
     then
     	echo -e "Para ejecutar un ataque de SQL pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
      	read -p "" tipoDeAtaque
@@ -95,7 +95,7 @@ menuPrincipal() {
 			;;
 	esac
     else
-	if [[ ${vector[@]} | grep 'xss' ]]
+	if [[ echo $vector | grep 'xss' ]]
     then
     	echo -e "Para ejecutar un ataque de XSS pulsa 1."
      	read -p "" tipoDeAtaque
