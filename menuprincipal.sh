@@ -1,6 +1,4 @@
 #!/bin/bash
-#source /repositorios/aquivanelrestodesh.
-#./funcion.sh
 source 3_controlerror.sh
 source 3_volvermenu.sh
 source 3_instalaciones.sh
@@ -9,7 +7,6 @@ source 3_checkurl.sh
 source 3_xss.sh
 source 3_sqli.sh
 source 3_vectores.sh
-#Muestra el menu general
 function 3_menuPrincipal() {  
     clear
     url=$(3_checkurl)
