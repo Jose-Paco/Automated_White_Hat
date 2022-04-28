@@ -1,5 +1,5 @@
 #!/bin/bash
-function 3_sqli {
+function 3_sqli() {
 URL=$(echo -e "$url")
 SQLi="%27+OR+1=1--"
 ATTACK="$URL$SQLi"
