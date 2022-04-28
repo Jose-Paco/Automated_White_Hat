@@ -1,5 +1,5 @@
  #!/bin/bash
-function 3_vectores(){
+function 3_vectores {
    declare -a vectores=()
    csrf=$(wget -q -O - "$1" | grep "csrf")
    login=$(wget -q -O - "$1" | grep "login")
