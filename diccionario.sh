@@ -2,9 +2,10 @@
 diccionario() {
 start=1
 URL=$(echo -e "$url")
-echo "Dime un usuario o un fichero txt con un listado de usuarios"
+
+document=a.txt
+echo "Dime un usuario o un fichero txt con un listado de usuarios, deja en blanco para la demo.\n"
 read document
-#añadir a.txt
 ok=0
 vale=0
 if [ -f  $document ]
