@@ -34,7 +34,6 @@ else
             echo "Usuario inexistente."
         fi
         ((start = start + 1))
-    #    echo $start
     done
 fi
 if [[ $vale==1 ]]
