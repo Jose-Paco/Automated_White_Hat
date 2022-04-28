@@ -12,26 +12,26 @@ source vectores.sh
 #Muestra el menu general
 menuPrincipal() {  
     clear
-    url=$(3_checkurl)
-    vector=$(3_vectores '$url')
+    url=$(checkurl)
+    vector=$(vectores '$url')
     echo "Los ataques disponibles a la página web " . $url . " son los que porponemos a continuacion:\n"
     if [[ echo $vector | grep 'xss' && grep 'diccionario' && grep 'sql' ]]
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 		2)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 		3)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
      else
@@ -39,15 +39,15 @@ menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 		2)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
       else
@@ -55,15 +55,15 @@ menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SQL pulsa 2."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 		2)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 	esac
       else
@@ -71,11 +71,11 @@ menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_diccionario.sh
+			diccionario.sh
 			;;
 	esac
       else
@@ -83,15 +83,15 @@ menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de SQL pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 		2)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
     else
@@ -99,11 +99,11 @@ menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de XSS pulsa 1."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_xss.sh
+			xss.sh
 			;;
 	esac
     else
@@ -111,14 +111,14 @@ menuPrincipal() {
     then
     	echo -e "Para ejecutar un ataque de SQL pulsa 1."
      	read -p "" tipoDeAtaque
-	3_instalaciones
+	instalaciones
 	case $tipoDeAtaque in
 		1)
 			clear
-			3_sqli.sh
+			sqli.sh
 			;;
 	esac
     
 }
 #main
-#'_menuPrincipal'
+#'menuPrincipal'
