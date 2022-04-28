@@ -7,6 +7,10 @@ source checkurl.sh
 source xss.sh
 source sqli.sh
 source vectores.sh
+
+#if tipo de ataque != 1,2,3 
+#opcion no quiero hacer nada
+#
 function menuPrincipal() {  
     clear
     url=$(checkurl)
