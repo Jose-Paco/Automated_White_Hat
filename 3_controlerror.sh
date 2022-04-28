@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-3_controlerror() {
+controlerror() {
     trap '' INT TSTP # trap para recoger (atrapar) señales de control c y control z e invalidarlas
 }
