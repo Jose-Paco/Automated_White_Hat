@@ -1,5 +1,5 @@
 #!/bin/bash
-function 3_diccionario() {
+3_diccionario() {
 start=1
 URL=$(echo -e "$url")
 echo "Dime un usuario o un fichero txt con un listado de usuarios"
