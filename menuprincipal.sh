@@ -8,14 +8,10 @@ source xss.sh
 source sqli.sh
 source vectores.sh
 
-#if tipo de ataque != 1,2,3 
-#opcion no quiero hacer nada
-#
 function menuPrincipal() {  
     clear
     url=$(checkurl)
     vector=$(vectores '$url')
-    #if csrf "es segura la web contra esta herramienta, else lo siguiente
     echo "Los ataques disponibles a la página web " . $url . " son los que aparecen a continuación: "
     if [[ echo $vector | grep "xss" && grep "diccionario" && grep "sql" ]]
     then
