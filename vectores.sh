@@ -9,43 +9,43 @@ vectores() {
    password=$(wget -q -O - "$1" | grep "password")
    username=$(wget -q -O - "$1" | grep "username")
    product=$(wget -q -O - "$1" | grep "product")
-   if [[ wget -q -O - "$1" | grep "product" ]]  || [[ $url grep "product" ]]
+   if [ wget -q -O - "$1" | grep "product" ]  || [ "$url" grep "product" ]
    then
    
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       product="a"
    fi
-   if [[ wget -q -O - "$1" | grep "password" ]]  || [[ $url grep "password" ]]
+   if [ wget -q -O - "$1" | grep "password" ]  || [ "$url" grep "password" ]
    then
    
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       password="a"
    fi
-   if [[ wget -q -O - "$1" | grep "username" ]]  || [[ $url grep "username" ]]
+   if [ wget -q -O - "$1" | grep "username" ]  || [ "$url" grep "username" ]
    then
    
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       username="a"
    fi
-      if [[ wget -q -O - "$1" | grep "login" ]]  || [[ $url grep "login" ]]
+      if [ wget -q -O - "$1" | grep "login" ] || [ "$url" grep "login" ]
    then
    
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       login="a"
    fi
-      if [[ wget -q -O - "$1" | grep "category" ]]  || [[ $url grep "category" ]]
+      if [ wget -q -O - "$1" | grep "category" ]  || [ "$url" grep "category" ]
    then
    
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       category="a"
    fi
-   if [[ wget -q -O - "$1" | grep "search" ]]  || [[ $url grep "search" ]]
+   if [ wget -q -O - "$1" | grep "search" ]  || [ "$url" grep "search" ]
    then
    
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       search="a"
    fi
-      if [[ wget -q -O - "$1" | grep "filter" ]]  || [[ $url grep "filter" ]]
+      if [ wget -q -O - "$1" | grep "filter" ]  || [ "$url" grep "filter" ]
    then
    #si estos parametros estan presentes en la web o la url, nos lo anotamos
       filter="a"
