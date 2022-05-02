@@ -7,8 +7,7 @@ source checkurl.sh
 source xss.sh
 source sqli.sh
 source vectores.sh
-
-function menuPrincipal() {  
+menuPrincipal() {  
     clear
     #Llamamos a la funcion url para pedir al usuario la web a la que quiere atacar.
     url=$(checkurl)
@@ -36,6 +35,8 @@ function menuPrincipal() {
 			'xss'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac
     elif [[ echo $vector | grep "xss" && grep "diccionario" ]]
     then
@@ -53,6 +54,8 @@ function menuPrincipal() {
 			'xss'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac
      elif [[ echo $vector | grep "sql" && grep "diccionario" ]]
      then
@@ -70,6 +73,8 @@ function menuPrincipal() {
 			'sqli'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac
      elif [[ echo $vector | grep "diccionario" ]]
      then
@@ -83,6 +88,8 @@ function menuPrincipal() {
 			'diccionario'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac
      elif [[ echo $vector | grep "xss" && grep "sql" ]]
      then
@@ -99,6 +106,8 @@ function menuPrincipal() {
 			'xss'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac 
       elif [[ echo $vector | grep "sql" ]]
       then
@@ -112,6 +121,8 @@ function menuPrincipal() {
 			'sqli'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac
       elif [[ echo $vector | grep "xss" ]]
       then
@@ -125,6 +136,8 @@ function menuPrincipal() {
 			'xss'
 			;;
 		*)
+			echo "Opcion no valida."
+			'volvermenu'
 	esac
 	fi
 }
