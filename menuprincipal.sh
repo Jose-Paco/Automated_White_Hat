@@ -15,7 +15,7 @@ menuPrincipal() {
     vector=$(vectores '$url')
     #Sacamos por pantalla los posibles vectores de ataque.
     echo "Los ataques disponibles a la página web " . $url . " son los que aparecen a continuación: "
-    if [[ echo $vector | grep "xss" && grep "diccionario" && grep "sql" ]]
+    if [ echo "$vector" | grep "xss" && grep "diccionario" && grep "sql" ]
     then
     	#Indicamos que tipo de ataque puede ejecutar segun el resultado de la funcion vectores y le pide al usuario que elija cual utilizar
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SqlInjection pulsa 2.\nPara ejecutar un ataque de XSS pulsa 3."
@@ -38,7 +38,7 @@ menuPrincipal() {
 			echo "Opcion no valida."
 			'volvermenu'
 	esac
-    elif [[ echo $vector | grep "xss" && grep "diccionario" ]]
+    elif [ echo "$vector" | grep "xss" && grep "diccionario" ]
     then
     	#Indicamos que tipo de ataque puede ejecutar segun el resultado de la funcion vectores y le pide al usuario que elija cual utilizar
     	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
@@ -57,7 +57,7 @@ menuPrincipal() {
 			echo "Opcion no valida."
 			'volvermenu'
 	esac
-     elif [[ echo $vector | grep "sql" && grep "diccionario" ]]
+     elif [ echo "$vector" | grep "sql" && grep "diccionario" ]
      then
      	#Indicamos que tipo de ataque puede ejecutar segun el resultado de la funcion vectores y le pide al usuario que elija cual utilizar
 	echo -e "Para ejecutar un ataque de Diccionario pulsa 1.\nPara ejecutar un ataque de SQL pulsa 2."
@@ -76,7 +76,7 @@ menuPrincipal() {
 			echo "Opcion no valida."
 			'volvermenu'
 	esac
-     elif [[ echo $vector | grep "diccionario" ]]
+     elif [ echo "$vector" | grep "diccionario" ]
      then
      	#Indicamos que tipo de ataque puede ejecutar segun el resultado de la funcion vectores y le pide al usuario que elija cual utilizar
 	    echo -e "Para ejecutar un ataque de Diccionario pulsa 1."
@@ -91,7 +91,7 @@ menuPrincipal() {
 			echo "Opcion no valida."
 			'volvermenu'
 	esac
-     elif [[ echo $vector | grep "xss" && grep "sql" ]]
+     elif [ echo "$vector" | grep "xss" && grep "sql" ]
      then
      	echo -e "Para ejecutar un ataque de SQL pulsa 1.\nPara ejecutar un ataque de XSS pulsa 2."
 	read -p "" tipoDeAtaque
@@ -109,7 +109,7 @@ menuPrincipal() {
 			echo "Opcion no valida."
 			'volvermenu'
 	esac 
-      elif [[ echo $vector | grep "sql" ]]
+      elif [ echo "$vector" | grep "sql" ]
       then
       	#Indicamos que tipo de ataque puede ejecutar segun el resultado de la funcion vectores y le pide al usuario que elija cual utilizar
       	echo -e "Para ejecutar un ataque de SqlInjection pulsa 1.\n"
@@ -124,7 +124,7 @@ menuPrincipal() {
 			echo "Opcion no valida."
 			'volvermenu'
 	esac
-      elif [[ echo $vector | grep "xss" ]]
+      elif [ echo "$vector" | grep "xss" ]
       then
       	#Indicamos que tipo de ataque puede ejecutar segun el resultado de la funcion vectores y le pide al usuario que elija cual utilizar
         echo -e "Para ejecutar un ataque de XSS pulsa 1."
