@@ -53,7 +53,8 @@ vectores() {
    if [ "$csrf" ]
    then
    #si dispone la web de un parametro CSRF (cros site request forgery) sabemos que disponen de un token CSRF y esta herramienta no puede hacer nada contra eso
-      vectores="csrf"
+       echo "Esta herramienta no puede atacar a esta URL.\n"
+       'volvermenu'
    else
     if [ "$login" ] || [ "$password" ] || [ "$username" ]
     then
