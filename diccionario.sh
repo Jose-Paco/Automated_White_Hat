@@ -39,13 +39,14 @@ else
             break 0
         else
             echo "Usuario inexistente.\n"
+            'volvermenu'
         fi
 fi
 #si da error  cerramos el programa
 if [[ $vale!=1 ]]
 then
     echo -e "No hemos podido encontrar un usuario valido.\n"
-    exit 1
+    'volvermenu'
 fi
 #Solicitamos que el usuario nos pase un diccioanrio de contraseñas que puede haber generado con Jhon the ripper o sino podemos utilizar el de demos o el rockyou
 echo "Quieres utilizar un diccionario de contraseñas en especifico? Indica la ruta del fichero de ser así, si no omite la respuesta.\n"
@@ -92,9 +93,10 @@ fi
 if [[ $ok==1 ]]
 then
     echo -e "El usuario es $usuari y su contraseña és $password ."
+    'volvermenu'
 else
     echo -e "El usuario es $usuari ."
     echo -e "La contraseña no se encuentra en el diccionario, lo sentimos."
-    exit 1
+    'volvermenu'
 fi
 }
