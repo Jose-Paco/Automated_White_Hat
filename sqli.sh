@@ -12,6 +12,6 @@ then
 else
 #si no funciona muestra este mensaje de error y cierra el programa
   echo "Disculpa, el ataque no ha funcionado."
-  exit 1
+  'volvermenu'
 fi
 }
