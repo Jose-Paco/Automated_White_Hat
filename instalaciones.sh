@@ -1,4 +1,3 @@
-#!/bin/bash
 instalaciones() {
 	    sudo apt-get update	> /dev/null 2>&1				#te hara una actualizacion 
             dpkg -s unzip > /dev/null 2>&1 			#revisa si se encuentra istalado
